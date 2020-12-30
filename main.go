@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/bm4cs/mastergo/takeaction"
 	"unicode"
-	"github.com/bm4cs/mastergo/bank"
 )
 
 func acronym(s string) (acr string) {
@@ -25,6 +25,8 @@ func main() {
 
 	//fmt.Println(takeaction.LongestString("Six", "sleek", "swans", "swam", "swiftly", "southwards"))
 
-	bank.Run()
+	//bank.Run()
+
+	takeaction.MapDemo()
 
 }

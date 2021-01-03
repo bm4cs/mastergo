@@ -27,6 +27,6 @@ func main() {
 
 	//bank.Run()
 
-	takeaction.MapDemo()
+	takeaction.NamedTypeSetDemo()
 
 }

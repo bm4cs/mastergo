@@ -27,6 +27,6 @@ func main() {
 
 	//bank.Run()
 
-	takeaction.NamedTypeSetDemo()
+	takeaction.TestDriveIntQueue()
 
 }

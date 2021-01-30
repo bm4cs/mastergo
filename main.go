@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/bm4cs/mastergo/takeaction"
+	"github.com/bm4cs/mastergo/web"
 	"unicode"
 )
 
@@ -27,6 +27,6 @@ func main() {
 
 	//bank.Run()
 
-	takeaction.TestDriveIntQueue()
+	web.RunWebServer()
 
 }

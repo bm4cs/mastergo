@@ -8,16 +8,17 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	quotes "github.com/bm4cs/mastergo/quotes"
 )
 
-type Quote struct {
-	Author string `json:"author"`
-	Text   string `json:"text"`
-	Source string `json:"source,omitempty"`
-}
+//type Quote struct {
+//	Author string `json:"author"`
+//	Text   string `json:"text"`
+//	Source string `json:"source,omitempty"`
+//}
 
 type App struct {
-	storage map[string]*Quote
+	storage map[string]*quotes.Quote
 }
 
 // createQuote receives a JSON object representing a Quote and stores
@@ -29,7 +30,7 @@ func (app *App) createQuote(b []byte) error {
 	// * Check if the quote exists in the storage, return an error if it does
 	// * Write the quote to the storage
 
-	var quote Quote
+	var quote quotes.Quote
 	err := json.Unmarshal(b, &quote)
 	if err != nil {
 		return fmt.Errorf("json unmarshal fail: %s", err)
@@ -125,7 +126,7 @@ func (app *App) handleQuotesList(w http.ResponseWriter, r *http.Request) {
 
 func RunWebServer() {
 	app := &App{
-		storage: map[string]*Quote{
+		storage: map[string]*quotes.Quote{
 			"Bill Gates":  {"Bill Gates", "The computer was born to solve problems that did not exist before.", "Microsoft"},
 			"Isaac Asimov": {"Isaac Asimov", "I do not fear computers. I fear lack of them.", "Science Fiction Author"},
 			"Donald Knuth":  {"Donald Knuth", "Computers are good at following instructions, but not at reading your mind.", "TAOCP"},
